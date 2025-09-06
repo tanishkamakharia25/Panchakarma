@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Panchakarma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="about-body">
+    <div class="about-container card">
+        <h1>About Panchakarma</h1>
+
+        <!-- Introduction -->
+        <p class="about-intro">
+            Panchakarma is a traditional Ayurvedic therapy designed for <strong>detoxification, rejuvenation, and restoration of body balance</strong>. Its roots can be traced back over 5,000 years, and it is recognized globally as a holistic approach to health.
+        </p>
+
+        <!-- Benefits Section -->
+        <h2>Benefits of Panchakarma</h2>
+        <div class="about-features">
+            <div class="feature-card">
+                <h3>Detoxification</h3>
+                <p>Removes accumulated toxins from the body and improves metabolic function.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Rejuvenation</h3>
+                <p>Replenishes vital energy, improves immunity, and promotes overall wellness.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Chronic Disease Support</h3>
+                <p>Assists in managing conditions such as arthritis, digestive disorders, and respiratory issues.</p>
+            </div>
+        </div>
+
+        <!-- Procedures Section -->
+        <h2>Core Panchakarma Procedures</h2>
+        <div class="about-features">
+            <div class="feature-card">
+                <h3>Vamana (Therapeutic Vomiting)</h3>
+                <p>Helps in cleansing the respiratory tract and eliminating Kapha toxins.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Virechana (Purgation Therapy)</h3>
+                <p>Eliminates Pitta-related toxins to improve liver and digestive function.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Basti (Enema Therapy)</h3>
+                <p>Cleanses the colon, balances Vata, and strengthens immunity.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Nasya (Nasal Therapy)</h3>
+                <p>Purifies sinuses, reduces headaches, and improves mental clarity.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Raktamokshana (Bloodletting)</h3>
+                <p>Detoxifies blood and supports skin and vascular health.</p>
+            </div>
+        </div>
+
+        <!-- How it Works -->
+        <h2>How Panchakarma Works</h2>
+        <p>
+            Panchakarma therapies work through a combination of <strong>herbal oils, medicated preparations, and natural techniques</strong> to remove deep-seated toxins from the body. The treatment is usually preceded by a preparatory phase (Snehan & Swedan) and followed by dietary & lifestyle guidance to maintain balance.
+        </p>
+
+        <!-- Modern Relevance -->
+        <h2>Modern Relevance</h2>
+        <p>
+            With the increasing interest in holistic wellness, Panchakarma is gaining recognition worldwide. Clinical studies have shown its effectiveness in improving immunity, reducing stress, enhancing digestion, and supporting chronic disease management.
+        </p>
+
+        <!-- Call to Action -->
+        <div class="about-cta">
+            <a href="{{ url_for('signup_page') }}" class="btn btn-cta">Get Started Today</a>
+        </div>
+
+        <div style="margin-top:20px;">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

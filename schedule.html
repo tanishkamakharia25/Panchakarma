@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule Therapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="form-body">
+    <div class="schedule-container card">
+        <h2>Schedule a Therapy Session</h2>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Patient Name" required>
+            <input type="text" name="therapy" placeholder="Therapy Name" required>
+            <input type="date" name="date" required>
+            <input type="time" name="time" required>
+            <input type="phone" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit" class="btn btn-cta">Schedule</button>
+        </form>
+        <div style="margin-top:20px;">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

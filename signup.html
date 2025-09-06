@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function toggleForm(type){
+            document.getElementById('userForm').style.display = type==='user' ? 'block' : 'none';
+            document.getElementById('practitionerForm').style.display = type==='practitioner' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body class="signup-body">
+    <div class="signup-container card">
+        <h2>Sign Up</h2>
+        <div class="toggle-buttons">
+            <button onclick="toggleForm('user')" class="btn btn-secondary">User</button>
+            <button onclick="toggleForm('practitioner')" class="btn btn-secondary">Practitioner</button>
+        </div>
+
+        <!-- User Form -->
+        <form id="userForm" method="POST" style="display:block;">
+            <input type="hidden" name="type" value="user">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="btn btn-cta">Sign Up as User</button>
+        </form>
+
+        <!-- Practitioner Form -->
+        <form id="practitionerForm" method="POST" style="display:none;">
+            <input type="hidden" name="type" value="practitioner">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="license" placeholder="License Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="btn btn-cta">Sign Up as Practitioner</button>
+        </form>
+
+        <div style="margin-top: 20px;">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

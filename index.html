@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panchakarma Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="index-body">
+    <div class="top-right-menu">
+        <a href="{{ url_for('signup_page') }}" class="btn btn-signup">Sign Up</a>
+        <a href="{{ url_for('about') }}" class="btn btn-secondary">About</a>
+    </div>
+
+    <div class="index-content">
+        <h1>"Healing comes from within"</h1>
+        <p class="quote-author">— Charaka</p>
+        <div class="selling-point">
+            <h2>Experience Authentic Panchakarma Therapy Today</h2>
+        </div>
+        <div class="cta">
+            <a href="{{ url_for('signup_page') }}" class="btn btn-cta">Get Started Today</a>
+            <a href="{{ url_for('precautions') }}" class="btn btn-secondary">Pre & Post Therapy Precautions</a>
+        </div>
+    </div>
+
+    <div class="waves">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
+
+    <div class="footer">
+        <h3>What Our Clients Say</h3>
+        <div class="reviews">
+            <div class="review-card">“Amazing therapy and staff!”</div>
+            <div class="review-card">“I feel rejuvenated after every session.”</div>
+            <div class="review-card">“Highly professional and authentic.”</div>
+        </div>
+    </div>
+</body>
+</html>

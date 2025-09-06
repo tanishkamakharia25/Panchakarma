@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress - {{ patient_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="form-body">
+    <div class="progress-container card">
+        <h2>{{ patient_name }} Progress</h2>
+        
+        {% if feedback_data %}
+            <canvas id="progressChart" width="400" height="250"></canvas>
+        {% else %}
+            <p>No feedback yet to display progress chart.</p>
+        {% endif %}
+
+        <div style="margin-top:20px;">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+
+    {% if feedback_data %}
+    <script>
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        const progressChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{ feedback_data.keys() | list }},
+                datasets: [{
+                    label: 'Number of Feedbacks',
+                    data: {{ feedback_data.values() | list }},
+                    backgroundColor: 'rgba(38,182,154,0.7)',
+                    borderColor: 'rgba(38,182,154,1)',
+                    borderWidth: 1,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Therapy Feedback Count',
+                        font: { size: 18 }
+                    }
+                },
+                scales: {
+                    y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                }
+            }
+        });
+    </script>
+    {% endif %}
+</body>
+</html>
